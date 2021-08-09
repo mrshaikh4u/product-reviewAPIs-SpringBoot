@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "afb6d95c-9e9e-41f3-8da4-c58be005b985",
+		"name": "Reviews",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "submitReview",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYWhpbF9kZW1vIiwiZXhwIjoxNjI4NTc1MTIzLCJpYXQiOjE2Mjg1MzkxMjN9.MIdHmjMINSc9N0kHEsAqNj5PrkT8gRuEA67J4HsSRso",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\" : \"rahil_demo\",\n    \"productID\" : \"BB5476\",\n    \"reviewScore\" : 4.2,\n    \"reviewComment\" : \"very very good\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{review-service-host}}/api/v1/reviews",
+					"protocol": "http",
+					"host": [
+						"{{review-service-host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchAllReviews",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{review-service-host}}/api/v1/reviews/all/BB5476",
+					"protocol": "http",
+					"host": [
+						"{{review-service-host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"reviews",
+						"all",
+						"BB5476"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateReview",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYWhpbF9kZW1vIiwiZXhwIjoxNjI4NTc1MTIzLCJpYXQiOjE2Mjg1MzkxMjN9.MIdHmjMINSc9N0kHEsAqNj5PrkT8gRuEA67J4HsSRso",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\" : \"rahil_demo\",\n    \"productID\" : \"BB5476\",\n    \"reviewScore\" : 5,\n    \"reviewComment\" : \"excellent service\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{review-service-host}}/api/v1/reviews/1",
+					"protocol": "http",
+					"host": [
+						"{{review-service-host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"reviews",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aggregate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{review-service-host}}/api/v1/reviews/BB5476",
+					"protocol": "http",
+					"host": [
+						"{{review-service-host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"reviews",
+						"BB5476"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProductDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{product-service-host}}/api/v1/products/BB5476",
+					"protocol": "http",
+					"host": [
+						"{{product-service-host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"BB5476"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteReview",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYWhpbF9kZW1vIiwiZXhwIjoxNjI4NTc1MTIzLCJpYXQiOjE2Mjg1MzkxMjN9.MIdHmjMINSc9N0kHEsAqNj5PrkT8gRuEA67J4HsSRso",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{review-service-host}}/api/v1/reviews/1",
+					"protocol": "http",
+					"host": [
+						"{{review-service-host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"reviews",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\" : \"rahil_demo\",\n    \"password\" : \"rahil123\",\n    \"email\" : \"rahil.s@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{review-service-host}}/api/v1/signup",
+					"protocol": "http",
+					"host": [
+						"{{review-service-host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\" : \"rahil_demo\",\n    \"password\" : \"rahil123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{review-service-host}}/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"{{review-service-host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
